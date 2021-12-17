@@ -10,7 +10,7 @@ public class Lifetime
     [StructLayout(LayoutKind.Sequential)]
     public class Lifespan
     {
-        public float span { get; }
+        public float span { get; } = 5;
     }
 
 #if UNITY_EDITOR
@@ -42,8 +42,8 @@ public class Lifetime
     #endregion
 
 
-    private static setLifespanDelegate setLifespan;
-    private delegate void setLifespanDelegate(ref Lifespan sp, float size);
+    public static setLifespanDelegate setLifespan;
+    public delegate void setLifespanDelegate(ref Lifespan sp, float size);
 
 
 }
